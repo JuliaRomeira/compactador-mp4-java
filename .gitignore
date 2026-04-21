@@ -1,0 +1,13 @@
+out/
+dist/
+installer/
+
+*.class
+*.log
+
+.idea/
+.vscode/
+*.iml
+
+Thumbs.db
+Desktop.ini
