@@ -1,90 +1,137 @@
-# Compactador de Video MP4 em Java
+# 🎬 Compactador de Vídeo MP4 em Java
 
-Projeto inicial de um aplicativo desktop simples feito com Java Swing para compactar videos MP4 usando FFmpeg.
+Aplicativo desktop desenvolvido em **Java** para compressão de vídeos MP4 utilizando o **FFmpeg**.
 
-## Objetivo
+A aplicação foi criada para simplificar o processo de compressão de vídeos através de uma interface gráfica intuitiva, eliminando a necessidade de uso direto de linha de comando.
 
-Aprender Java construindo um app util para o dia a dia:
+## 🎥 Demonstração
 
-- selecionar um arquivo MP4
-- escolher onde salvar o resultado
-- definir o nivel de compactacao
-- executar o FFmpeg pela interface
-- acompanhar mensagens de status
+<p align="center">
+  <img src="Animação.gif" alt="Demonstração do projeto" width="700"/>
+</p>
+ 
+</p>
 
-## Estrutura
+---
 
-- `src/com/julia/videocompressor/Main.java`: ponto de entrada
-- `src/com/julia/videocompressor/VideoCompressorFrame.java`: interface grafica
-- `src/com/julia/videocompressor/CompressionPreset.java`: presets de compressao
-- `src/com/julia/videocompressor/FfmpegRunner.java`: montagem e execucao do comando
+## 💼 Contexto do Projeto
 
-## Como compilar
+Este projeto foi desenvolvido para atender uma necessidade real no ambiente de trabalho: a compressão de vídeos MP4 para facilitar o compartilhamento e reduzir o uso de armazenamento.
+
+Antes da ferramenta, o processo era feito manualmente via linha de comando utilizando FFmpeg, o que dificultava o uso por pessoas sem conhecimento técnico.
+
+A proposta da aplicação foi simplificar esse fluxo através de uma interface gráfica acessível.
+
+---
+
+## 🧩 Problema Resolvido
+
+- Processo manual e técnico para compressão de vídeos
+- Dificuldade de uso para usuários não técnicos
+- Falta de padronização no processo de compressão
+- Tempo elevado para execução das tarefas
+
+---
+
+## 🚀 Funcionalidades
+
+- Seleção de arquivos MP4
+- Definição do diretório de saída
+- Escolha de níveis de compressão
+- Execução automática do FFmpeg
+- Exibição de status em tempo real durante o processamento
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- Java (JDK 17)
+- Java Swing (interface gráfica)
+- FFmpeg (processamento de vídeo)
+
+---
+
+## 📁 Estrutura do projeto
+src/com/julia/videocompressor/
+
+│
+
+├── Main.java # Ponto de entrada da aplicação
+
+├── VideoCompressorFrame.java # Interface gráfica
+
+├── CompressionPreset.java # Presets de compressão
+
+└── FfmpegRunner.java # Execução do FFmpeg
+
+
+---
+
+## ⚙️ Como compilar
 
 ```powershell
 javac -d out src\com\julia\videocompressor\*.java
 ```
 
-## Como executar
-
-```powershell
-java -cp out com.julia.videocompressor.Main
+## 📦 Gerar JAR
 ```
-
-## Como gerar JAR
-
-```powershell
 powershell -ExecutionPolicy Bypass -File .\build-jar.ps1
 ```
 
-O arquivo sera criado em:
-
-```text
+## Arquivo gerado:
+```
 dist\CompactadorMP4.jar
 ```
+## 🧩 Gerar executável (.exe)
+- powershell -ExecutionPolicy Bypass -File .\build-exe.ps1
 
-## Como gerar EXE
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\build-exe.ps1
-```
-
-O executavel sera criado em:
-
-```text
+## Saída:
+````
 installer\CompactadorMP4.exe
-```
+`````
 
-Se o WiX Toolset nao estiver instalado, o script vai gerar automaticamente uma versao portatil em pasta:
-
-```text
+## Caso o WiX Toolset não esteja instalado, será gerada uma versão portátil:
+````
 installer\CompactadorMP4\
-```
+`````
 
-Essa pasta ja permite abrir o app pelo arquivo principal, mesmo sem o `.exe` instalador.
+## 📈 Impacto
 
-## Requisitos para o EXE
+- Redução significativa no tempo de compressão de vídeos
+- Facilidade de uso para usuários não técnicos
+- Padronização do processo de compressão dentro do fluxo de trabalho
+  
+## 🧠 Observação
 
-- Java JDK 17 com `jpackage`
-- WiX Toolset no PATH para gerar `.exe` no Windows
-- FFmpeg instalado ou caminho informado dentro do app
+- A aplicação foi desenvolvida com foco em utilidade prática e aprendizado de integração entre Java e ferramentas externas como o FFmpeg.
 
-## Fluxo recomendado
+## 🚧 Melhorias futuras
 
-1. Rodar `.\build-jar.ps1`
-2. Testar o app
-3. Rodar `.\build-exe.ps1`
-4. Abrir o `.exe` gerado em `installer\`
+- Detecção automática do FFmpeg no sistema
+- Barra de progresso durante compressão
+- Suporte a múltiplos arquivos em fila
+- Melhorias na interface gráfica
+- Suporte a outros formatos de vídeo
+  
+## ⚠️ Requisitos
 
-## Observacao
+- Java JDK 17 (com suporte a jpackage)
+- FFmpeg instalado ou configurado no PATH
+- WiX Toolset (opcional para geração do instalador)
+  
+## 🔄 Fluxo recomendado
 
-O `ffmpeg` ainda precisa estar instalado no computador. Nesta primeira versao, voce pode:
+- Compilar o projeto
+- Testar a aplicação
+- Gerar JAR
+- Gerar executável
+- Utilizar a versão final
+  
+## 💡 Nota
 
-- informar o caminho completo do `ffmpeg.exe`
-- ou usar apenas `ffmpeg` se ele estiver no PATH
+- O FFmpeg deve estar disponível no sistema. Você pode configurar o caminho manualmente ou adicioná-lo ao PATH do sistema.
 
-Exemplo de caminho:
-
-```text
+### Exemplo:
+````
 C:\ffmpeg\bin\ffmpeg.exe
-```
+````
